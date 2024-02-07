@@ -6,26 +6,26 @@
 
 :root {
   --text-color: white;
-  --br-url: url(./assets/dev/bg-desktop.jpg);
+  --br-url: url(./assets/bg-desktop.jpg);
   --stroke-color: rgba(255, 255, 255, 0.35);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: #b287b741;
   --border-color-hover: white;
   --border-color-container: rgba(255, 255, 255, 0.075);
-  --icon-switch: url(./assets/dev/MoonStars.svg);
-  --profile-icon: url(./assets/dev/Roy.png);
+  --icon-switch: url(./assets/MoonStars.svg);
+  --profile-icon: url(./assets/avatar3.png);
 }
 
 .light {
   --text-color: black;
-  --br-url: url(./assets/dev/bg-desktop-light.jpg);
+  --br-url: url(./assets/bg-desktop-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.35);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: #47214c41;
   --border-color-hover: #180b1a;
   --border-color-container: rgba(48, 17, 47, 0.075);
-  --icon-switch: url(./assets/dev/Sun.svg);
-  --profile-icon: url(./assets/dev/avatar3.png);
+  --icon-switch: url(./assets/Sun.svg);
+  --profile-icon: url(./assets/avatar3.png);
 }
 
 body {
@@ -68,6 +68,7 @@ body * {
   zoom: 20;
   border: solid 0.1px var(--border-color-hover);
   max-width: 10px;
+  max-height: 10px;
   transition: all 1.8s;
 }
 
