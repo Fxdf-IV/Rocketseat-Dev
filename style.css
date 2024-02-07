@@ -13,7 +13,7 @@
   --border-color-hover: white;
   --border-color-container: rgba(255, 255, 255, 0.075);
   --icon-switch: url(./assets/dev/MoonStars.svg);
-  --profile-icon: url(./assets/dev/Roy.png)
+  --profile-icon: url(./assets/dev/Roy.png);
 }
 
 .light {
@@ -25,7 +25,7 @@
   --border-color-hover: #180b1a;
   --border-color-container: rgba(48, 17, 47, 0.075);
   --icon-switch: url(./assets/dev/Sun.svg);
-  --profile-icon: url(./assets/dev/avatar3.png)
+  --profile-icon: url(./assets/dev/avatar3.png);
 }
 
 body {
@@ -127,7 +127,7 @@ body * {
 }
 
 #togleMode {
-  transition: 5s
+  transition: 5s;
 }
 
 ul {
