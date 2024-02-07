@@ -68,7 +68,6 @@ body * {
   zoom: 20;
   border: solid 0.1px var(--border-color-hover);
   max-width: 10px;
-  max-zoom: 20;
   transition: all 1.8s;
 }
 
