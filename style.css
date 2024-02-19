@@ -29,65 +29,69 @@
 }
 
 body {
-  background: var(--br-url);
-}
-
-body {
   background: var(--br-url) no-repeat top center/cover;
-  transition: all 1.8s;
+  height: 100%;
+  transition: background 1.5s;
 }
 
 body * {
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
   color: var(--text-color);
+  transition: color 0.5s;
 }
 
 #container {
-  width: 600px;
-  border: 1px solid var(--stroke-color);
-  margin: 56px auto auto auto;
-  padding: 32px 24px 48px;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 588px;
+  max-height: 739px;
+  margin: 56px auto 0px;
+  padding: 24px 24px 48px;
   background-color: #1b283839;
   border: solid 1px var(--border-color-container);
   border-radius: 4%;
 }
 
+@media (max-width: 700px) {
+  body {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  #container {
+    width: 100%;
+    max-width: 588px;
+    max-height: 739px;
+    justify-content: center;
+    align-items: center;
+    position: center;
+  }
+}
+
 #profile {
   text-align: center;
+  padding: 24px;
 }
 
 #profile img {
-  width: 10px;
+  width: 112px;
+  zoom: 1.5;
   border-radius: 50%;
-  zoom: 20;
   border: solid 0.1px var(--border-color-hover);
-  max-width: 10px;
-  max-height: 10px;
-  transition: all 1.8s;
+  transition: border 1.5s;
 }
 
 #profile p {
-  font-weight: 600;
+  font-weight: 500;
   line-height: 24px;
-  margin-top: 8px;
+  margin: 8px 0px 0px;
   text-align: center;
   color: var(--text-color);
 }
 
 #switch {
-  width: 64px;
   position: relative;
-
-  margin: 0 auto;
-  padding: auto;
-
-  transition: all 1.8s;
+  width: 64px;
+  margin: 4px auto;
 }
 
 #switch button {
@@ -97,19 +101,26 @@ body * {
   border: 0;
   border-radius: 50%;
   background: white var(--icon-switch) no-repeat center;
-
   position: absolute;
   z-index: 1;
   transform: translateY(-50%);
   top: 50%;
-  left: 0;
+  transition: background 0.3s;
+  animation: slide-back 0.3s forwards;
+}
 
-  transition: all 1.8s;
+.light #switch button {
+  transition: background 0.3s;
+  animation: slide-in 0.3s forwards;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--surface-color-hover);
 }
 
 #switch span {
   width: 64px;
-  height: 30px;
+  height: 24px;
   justify-content: center;
   align-items: center;
   background: var(--surface-color);
@@ -122,8 +133,7 @@ body * {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.5s forwards;
 }
 
 #togleMode {
@@ -134,52 +144,50 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  padding: auto;
-  padding-right: 32px;
+  padding: 12px 32px 0px;
   gap: 16px;
 }
 
+ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 ul li a {
-  width: 440px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  padding-right: 32px;
+  padding: 16px 24px;
   margin: auto;
   text-decoration-line: none;
   font-weight: 500;
+  font-size: medium;
   border-radius: 8px;
   border: 1px solid var(--stroke-color);
   background: var(--surface-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   color: var(--text-color);
-  transition: all 0.3s;
-}
-
-ul li {
-  width: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+  transition: background 0.2s;
 }
 
 ul li a:hover {
-  width: 480px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  padding-right: 32px;
+  padding: 16px 24px;
   margin: auto;
   text-decoration-line: none;
   font-weight: 800;
+  font-size: large;
   border-radius: 8px;
   border: 1.5px solid var(--border-color-hover);
   background: var(--surface-color-hover);
   backdrop-filter: blur(5px);
+  transition: all 0.5s;
 }
 
 #social {
@@ -215,7 +223,8 @@ ion-icon {
 }
 
 #social a:hover ion-icon {
-  font-size: 38px;
+  font-size: 24px;
+  font-weight: 800;
   transition: all 0.5s;
 }
 
@@ -227,6 +236,7 @@ footer {
   font-weight: 400;
   line-height: 24px;
   padding: 3rem;
+  position: fixed center;
 }
 
 footer a {
@@ -237,4 +247,22 @@ footer a {
   font-weight: 400;
   line-height: 24px;
   text-decoration-line: underline;
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
